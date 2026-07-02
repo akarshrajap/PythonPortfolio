@@ -2,7 +2,7 @@ import sqlite3
 import os
 from flask import Flask, render_template, request, g, redirect, flash, url_for
 
-app = Flask(__name__)
+app = Flask(__name__, static_folder='static', template_folder='templates')
 app.secret_key = os.environ.get('SECRET_KEY', 'supersecretkeyforflashingmessages')  # Required for flash messages
 
 # Render free tier does not provide a persistent disk, so use ephemeral storage there.
